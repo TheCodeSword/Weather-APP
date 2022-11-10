@@ -50,6 +50,12 @@ myButton.addEventListener('click', async function generate(e){
 
         //getting data from the server
         const dataOut = await fetch('/getData').then(res => res.json())
+
+        //Update UI
+        dateOut.innerHTML = dataOut.date;
+        tempOut.innerHTML = dataOut.Temperature;
+        contentOut.innerHTML = dataOut.feeling;
+
     } catch(error) {
         console.log(`There's an error`, error);
     }
